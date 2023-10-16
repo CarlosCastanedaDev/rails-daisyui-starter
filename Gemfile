@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.7", ">= 7.0.7"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 6.0"
@@ -54,6 +54,7 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
 end
 
 group :development do
@@ -72,4 +73,41 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+# AppDev Gems
+# ===========
+gem "appdev_support"
+gem "awesome_print"
+gem "devise"       # to be removed
+gem "dotenv-rails"
+gem "faker"
+gem "htmlbeautifier"
+gem "http"
+gem "sqlite3", "~> 1.4"
+gem "table_print"
+
+group :development do
+  gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "draft_generators"
+  gem "grade_runner"
+  gem "pry-rails"
+  gem "rails_db"
+  gem "rails-erd"
+  gem "rufo"
+  gem "specs_to_readme"
+  gem "web_git"
+end
+
+group :development, :test do
+  gem "rspec-rails", "~> 6.0.0"
+end
+
+group :test do
+  gem "draft_matchers"#, "0.0.2"#path: "../../my_stuff/draft_matchers"
+  # gem "draft_matchers"
+  gem "rspec-html-matchers"
+  gem "webmock"
 end
